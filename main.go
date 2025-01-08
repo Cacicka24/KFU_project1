@@ -1,6 +1,8 @@
 package main
 
 import (
+	"TG_bot/filters"
+	"TG_bot/handlers"
 	"context"
 	"os"
 	"os/signal"
@@ -23,13 +25,17 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	//хендлер отвечающий за привествие по команде "/start"
+	b.RegisterHandlerMatchFunc(filters.IsStart, handlers.Start)
 
 	b.Start(ctx)
 }
 
+// Дефолтный обработчик сообщений, отвечает на каждое сообщение "Нет такой команды", кроме тех сообщений,
+// которые прописанны в других хендлерах
 func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
 	b.SendMessage(ctx, &bot.SendMessageParams{
 		ChatID: update.Message.Chat.ID,
-		Text:   update.Message.Text,
+		Text:   "Нет такой команды",
 	})
 }
