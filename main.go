@@ -28,6 +28,8 @@ func main() {
 	//хендлер отвечающий за привествие по команде "/start"
 	b.RegisterHandlerMatchFunc(filters.IsStart, handlers.Start)
 
+	b.RegisterHandlerMatchFunc(filters.IsHelp, handlers.Help)
+
 	b.Start(ctx)
 }
 
