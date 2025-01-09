@@ -27,7 +27,7 @@ func main() {
 	}
 	//хендлер отвечающий за привествие по команде "/start"
 	b.RegisterHandlerMatchFunc(filters.IsStart, handlers.Start)
-
+	//думаю, что так или иначе в каждом боте должна быть команда /help
 	b.RegisterHandlerMatchFunc(filters.IsHelp, handlers.Help)
 
 	b.Start(ctx)
