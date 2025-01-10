@@ -12,10 +12,14 @@ import (
 	"github.com/go-telegram/bot/models"
 
 	//библиотека для логирования
+	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )
 
 func main() {
+	//для понятного вывода логов в консоль
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
 
