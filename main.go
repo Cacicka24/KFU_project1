@@ -32,17 +32,18 @@ func main() {
 		log.Panic()
 	}
 
-	//хендлер отвечающий за привествие по команде "/start"
+	//хендлер отвечающий за привестственное сообщение по команде "/start"
 	b.RegisterHandlerMatchFunc(filters.IsStart, handlers.Start)
-	//думаю, что так или иначе в каждом боте должна быть команда /help
+	//хендлер отвечающий за команду /help
 	b.RegisterHandlerMatchFunc(filters.IsHelp, handlers.Help)
+	//хендлер отвечающий за команду /login
+	b.RegisterHandlerMatchFunc(filters.IsLogin, handlers.Login)
 
 	b.Start(ctx)
 }
 
-//Дефолтный обработчик сообщений, отвечает на каждое сообщение "Нет такой команды", кроме тех сообщений,
-//которые прописанны в других хендлерах
-
+// Дефолтный обработчик сообщений, отвечает на каждое сообщение "Нет такой команды", кроме тех сообщений,
+// которые прописанны в других хендлерах
 func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
 	b.SendMessage(ctx, &bot.SendMessageParams{
 		ChatID: update.Message.Chat.ID,
