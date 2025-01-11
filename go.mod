@@ -4,6 +4,7 @@ go 1.23.1
 
 require (
 	github.com/go-telegram/bot v1.13.1 // indirect
+	github.com/go-telegram/ui v0.4.1 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/rs/zerolog v1.33.0 // indirect

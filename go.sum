@@ -1,6 +1,8 @@
 github.com/coreos/go-systemd/v22 v22.5.0/go.mod h1:Y58oyj3AT4RCenI/lSvhwexgC+NSVTIJ3seZv2GcEnc=
 github.com/go-telegram/bot v1.13.1 h1:t2EPg6GfttHAZ29TrMk4Zk32K45XRj221C3UVS/IUgw=
 github.com/go-telegram/bot v1.13.1/go.mod h1:i2TRs7fXWIeaceF3z7KzsMt/he0TwkVC680mvdTFYeM=
+github.com/go-telegram/ui v0.4.1 h1:5LECUkzjKuhmW3YMACYFzHD1h1+XUMMS42SN+Fl91is=
+github.com/go-telegram/ui v0.4.1/go.mod h1:Ze99WRnNvRNmZHgyhxH+mb8OhGnptFFsz0F6L2XQcIc=
 github.com/godbus/dbus/v5 v5.0.4/go.mod h1:xhWf0FNVPg57R7Z0UbKHbJfkEywrmjJnf7w5xrFpKfA=
 github.com/mattn/go-colorable v0.1.13/go.mod h1:7S9/ev0klgBDR4GtXTXX8a3vIGJpMovkB8vQcUbaXHg=
 github.com/mattn/go-colorable v0.1.14 h1:9A9LHSqF/7dyVVX6g0U9cwm9pG3kP9gSzcuIPHPsaIE=

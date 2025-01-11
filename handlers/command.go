@@ -21,15 +21,28 @@ func Start(ctx context.Context, b *bot.Bot, update *models.Update) {
 func Help(ctx context.Context, b *bot.Bot, update *models.Update) {
 	b.SendMessage(ctx, &bot.SendMessageParams{
 		ChatID: update.Message.Chat.ID,
-		Text:   "Список команд для взаимодействия с ботом: \n /start - запускает бота \n /help - список команд",
+		Text:   "Список команд для взаимодействия с ботом: \n /start - запускает бота \n /help - список команд \n /login - для регистрации",
 	})
 	log.Info().Msg("Пользователь воспользовался командой /help")
 }
 
 func Login(ctx context.Context, b *bot.Bot, update *models.Update) {
+	kb := &models.InlineKeyboardMarkup{
+		InlineKeyboard: [][]models.InlineKeyboardButton{
+			{
+				{Text: "Яндекс ID", CallbackData: "Авторизация через Яндекс ID"},
+			}, {
+				{Text: "Github", CallbackData: "Авторизация через Github"},
+			}, {
+				{Text: "Код", CallbackData: "Авторизация через код"},
+			},
+		},
+	}
+
 	b.SendMessage(ctx, &bot.SendMessageParams{
-		ChatID: update.Message.Chat.ID,
-		Text:   "Выберите способ авторизации:",
+		ChatID:      update.Message.Chat.ID,
+		Text:        "Выберите способ авторизации:",
+		ReplyMarkup: kb,
 	})
 	log.Info().Msg("Пользователь воспользовался командой /login")
 }
