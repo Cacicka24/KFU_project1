@@ -13,7 +13,7 @@ import (
 func Start(ctx context.Context, b *bot.Bot, update *models.Update) {
 	b.SendMessage(ctx, &bot.SendMessageParams{
 		ChatID: update.Message.Chat.ID,
-		Text:   "Бот запущен! Если вы не авторизованны, то это стоит сделать нажав сюда: /login", //FIXME
+		Text:   "Бот запущен! Ознакомиться со списком всех команд можно по команде /help. Если вы не авторизованны, то это стоит сделать нажав сюда: /login", //FIXME
 	})
 	log.Info().Msg("Пользователь запустил бота")
 }
